@@ -43,10 +43,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="cliente.h" />
-		<Unit filename="empleado.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="empleado.h" />
 		<Unit filename="fecha.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -55,6 +51,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="juego.h" />
+		<Unit filename="localidad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="localidad.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

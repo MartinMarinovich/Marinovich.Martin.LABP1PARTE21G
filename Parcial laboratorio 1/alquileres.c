@@ -329,7 +329,7 @@ int mostrarClientesSinAlquileres(eCliente listaDeClientes [],eAlquileres listaDe
 {
     int retorno = -1;
     int indice;
-    int flag = 1;
+
     if(listaDeClientes != NULL && listaDeALquileres!= NULL && listaDeLocalidades != NULL  && tamClientes >0 && tamAlquiler >0 && tamLocalidades>0)
     {
 
@@ -339,16 +339,14 @@ int mostrarClientesSinAlquileres(eCliente listaDeClientes [],eAlquileres listaDe
 
             if(indice != -1)
             {
-                if(listaDeALquileres[i].codigoCliente == listaDeClientes[j].codigo)
+                if(listaDeALquileres[i].isEmpty == 0 && listaDeALquileres[i].codigoCliente == listaDeClientes[i].codigo)
                 {
-                        flag = 0;
+
+                }else
+                {
+                    mostrarUnCliente(listaDeClientes[i],listaDeLocalidades,tamLocalidades);
                 }
 
-            }
-
-            if(flag)
-            {
-                mostrarUnCliente(listaDeClientes[indice],listaDeLocalidades,tamLocalidades);
             }
         }
     }

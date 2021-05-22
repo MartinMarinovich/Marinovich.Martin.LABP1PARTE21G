@@ -121,14 +121,9 @@ int main()
                 ordenarClientes(listaDeClientes,TAM_CLIENTES),
 
 
-                                listarClientes(listaDeClientes,listaDeLocalidades,TAM_CLIENTES,TAM_LOCALIDADES);
+             listarClientes(listaDeClientes,listaDeLocalidades,TAM_CLIENTES,TAM_LOCALIDADES);
 
-                //listarPorCategoria(listaDeAlquileres,listaDeCategorias,listaDeJuegos,listaDeClientes,TAM_CLIENTES,TAM_JUEGOS,TAM_ALQUILERES,TAM_CATEGORIAS);
-                // mostrarJuegoFavorito(listaDeAlquileres,listaDeJuegos,TAM_JUEGOS,TAM_ALQUILERES);
 
-                //mostrarAcumuladoPorCliente(listaDeAlquileres,listaDeJuegos,listaDeClientes,TAM_CLIENTES,TAM_ALQUILERES,TAM_JUEGOS,listaDeLocalidades,TAM_LOCALIDADES);
-                // mostrarAlquileresPorCliente(listaDeAlquileres,listaDeJuegos,listaDeClientes,listaDeCategorias,listaDeLocalidades,TAM_LOCALIDADES,TAM_CATEGORIAS,TAM_CLIENTES,TAM_ALQUILERES,TAM_JUEGOS);
-                // mostrarAlquileresPorFecha(listaDeAlquileres,listaDeJuegos,listaDeClientes,listaDeCategorias,TAM_ALQUILERES,TAM_CATEGORIAS,TAM_JUEGOS,TAM_CLIENTES);
             }
             else
             {
@@ -141,7 +136,7 @@ int main()
 
             if(!verificarExistenciaCliente(listaDeClientes,TAM_CLIENTES))
             {
-                //altaAlquiler(listaDeAlquileres,listaDeClientes,TAM_CLIENTES,TAM_ALQUILERES,&proximoIdAlquiler,listaDeJuegos,TAM_JUEGOS)
+
                 if(altaAlquiler(listaDeAlquileres,listaDeClientes,listaDeLocalidades,TAM_LOCALIDADES,TAM_CLIENTES,TAM_ALQUILERES,&proximoIdAlquiler,listaDeJuegos,TAM_JUEGOS))
                 {
                     printf("Alta alquiler exirosa!\n");
@@ -202,10 +197,10 @@ int main()
             }
             break;
 
-        case 10:
+        case 10:/*
             if(!verificarExistenciaCliente(listaDeClientes,TAM_CLIENTES) && !verificarExistenciaAlquiler(listaDeAlquileres,TAM_ALQUILERES))
             {
-                //mostrarClientesSinAlquileres(listaDeClientes,listaDeAlquileres,TAM_CLIENTES,TAM_ALQUILERES,listaDeLocalidades,TAM_LOCALIDADES);
+                mostrarClientesSinAlquileres(listaDeClientes,listaDeAlquileres,TAM_CLIENTES,TAM_ALQUILERES,listaDeLocalidades,TAM_LOCALIDADES);
 
             }
             else
@@ -213,7 +208,7 @@ int main()
                 printf("Error, no hay alquileres o clientes para listar\n");
             }
             break;
-
+*/
         case 11:
             if(!verificarExistenciaCliente(listaDeClientes,TAM_CLIENTES) && !verificarExistenciaAlquiler(listaDeAlquileres,TAM_ALQUILERES))
             {
@@ -242,7 +237,7 @@ int main()
             if(!verificarExistenciaCliente(listaDeClientes,TAM_CLIENTES) && !verificarExistenciaAlquiler(listaDeAlquileres,TAM_ALQUILERES))
             {
 
-                listarClientesPorLocalidad(listaDeClientes,listaDeLocalidades,TAM_CLIENTES,TAM_LOCALIDADES);
+                listarClientesPorLocalidad(listaDeClientes,listaDeLocalidades,TAM_LOCALIDADES,TAM_CLIENTES);
 
             }
             else
@@ -251,8 +246,9 @@ int main()
             }
             break;
 
-            }
-        }while(opcionMenu != 15);
+        }
+    }
+    while(opcionMenu != 15);
 
     return 0;
 }

@@ -469,15 +469,14 @@ int ordenarClientes(eCliente listaDeClientes [], int tamClientes)
 int listarClientesPorLocalidad(eCliente listaDeClientes [],eLocalidad listaDeLocalidades [],int tamLocalidad, int tamClientes)
 {
     int retorno = -1;
-    int idCliente;
     int idLocalidad;
     if(listaDeClientes!=NULL && listaDeLocalidades!=NULL && tamLocalidad >0 && tamClientes>0)
     {
-        listarLocalidades(listaDeLocalidades,tamLocalidad));
+        listarLocalidades(listaDeLocalidades,tamLocalidad);
 
-        if(utn_getNumero(&idLocalidad,"Ingrese el id de la localidad\n","Error, id invalido\n",100,1074))
+        if(utn_getNumero(&idLocalidad,"Ingrese el id de la localidad\n","Error, id invalido\n",100,107,4))
         {
-            for(int i = 0; i<tamClientes;i++)
+            for(int i = 0; i<tamLocalidad;i++)
             {
                 if(listaDeClientes[i].idLocalidad == idLocalidad)
                 {

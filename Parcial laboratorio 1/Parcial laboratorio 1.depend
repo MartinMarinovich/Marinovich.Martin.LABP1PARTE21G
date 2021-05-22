@@ -145,7 +145,7 @@
 	<stdlib.h>
 	<string.h>
 
-1621644126 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\alquileres.c
+1621645061 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -165,7 +165,7 @@
 
 1621030127 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\fecha.h
 
-1621640085 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.h
+1621645084 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.h
 	"localidad.h"
 
 1621634993 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\localidad.h
@@ -194,7 +194,7 @@
 	<string.h>
 	"utn.h"
 
-1621643884 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\main.c
+1621645061 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"alquileres.h"
@@ -210,7 +210,7 @@
 	<stdlib.h>
 	<string.h>
 
-1621643687 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.c
+1621645095 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
