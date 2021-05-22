@@ -1,0 +1,220 @@
+# depslib dependency file v1.0
+1621629159 source:c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alquileres.h"
+	"categoria.h"
+	"cliente.h"
+	"juego.h"
+	"utn.h"
+
+1621030029 source:c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\fecha.c
+
+1621549103 source:c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\categoria.c
+	"categoria.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621491274 c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\categoria.h
+
+1621628600 source:c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\juego.c
+	"juego.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621628617 c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\juego.h
+
+1621033841 source:c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1621033048 c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\utn.h
+
+1621628733 source:c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+	"utn.h"
+	"cliente.h"
+
+1621628643 c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\cliente.h
+	"empleado.h"
+
+1621629346 source:c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"alquileres.h"
+	"utn.h"
+	"juego.h"
+	"cliente.h"
+	"categoria.h"
+	"empleado.h"
+
+1621628795 c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\alquileres.h
+	"categoria.h"
+	"fecha.h"
+	"cliente.h"
+	"juego.h"
+
+1621030127 c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\fecha.h
+
+1621482875 source:c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\empleado.c
+	"empleado.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621478956 c:\users\martin\desktop\parcial de laboratorio 1g\marinovich.martin.parciallaboratorio1g\parcial laboratorio 1\empleado.h
+
+1621631712 source:c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alquileres.h"
+	"categoria.h"
+	"cliente.h"
+	"juego.h"
+	"utn.h"
+
+1621632233 c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\alquileres.h
+	"categoria.h"
+	"fecha.h"
+	"cliente.h"
+	"juego.h"
+
+1621491274 c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\categoria.h
+
+1621030127 c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\fecha.h
+
+1621628643 c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\cliente.h
+	"empleado.h"
+
+1621478956 c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\empleado.h
+
+1621628617 c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\juego.h
+
+1621033048 c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\utn.h
+
+1621549103 source:c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\categoria.c
+	"categoria.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621628733 source:c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+	"utn.h"
+	"cliente.h"
+
+1621482875 source:c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\empleado.c
+	"empleado.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621030029 source:c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\fecha.c
+
+1621631529 source:c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"alquileres.h"
+	"utn.h"
+	"juego.h"
+	"cliente.h"
+	"categoria.h"
+	"empleado.h"
+
+1621033841 source:c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1621630556 source:c:\users\martin\desktop\marinovich.martin.parcial.laboratorio1g\parcial laboratorio 1\juego.c
+	"juego.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621644126 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"alquileres.h"
+	"categoria.h"
+	"cliente.h"
+	"juego.h"
+	"utn.h"
+
+1621643795 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\alquileres.h
+	"categoria.h"
+	"fecha.h"
+	"cliente.h"
+	"juego.h"
+
+1621491274 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\categoria.h
+
+1621030127 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\fecha.h
+
+1621640085 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.h
+	"localidad.h"
+
+1621634993 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\localidad.h
+
+1621638773 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\juego.h
+
+1621033048 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\utn.h
+
+1621549103 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\categoria.c
+	"categoria.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621030029 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\fecha.c
+
+1621638820 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\juego.c
+	"juego.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621033841 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1621643884 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"alquileres.h"
+	"utn.h"
+	"juego.h"
+	"cliente.h"
+	"categoria.h"
+	"localidad.h"
+
+1621636605 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\localidad.c
+	"localidad.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1621643687 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"localidad.h"
+	"utn.h"
+	"cliente.h"
+
