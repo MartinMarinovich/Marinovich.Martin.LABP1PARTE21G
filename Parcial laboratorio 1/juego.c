@@ -38,7 +38,7 @@ int hardCodearJuegos(eJuego listaDeJuegos[], int tamJuegos)
 
 void mostrarJuego(eJuego unJuego)
 {
-    printf(" %d         %10s \n",unJuego.codigo,unJuego.descripcion);
+    printf(" %d         %20s \n",unJuego.codigo,unJuego.descripcion);
 }
 
 int listarJuegos(eJuego listaDeJuegos[], int tamanioJuegos)
@@ -49,8 +49,8 @@ int listarJuegos(eJuego listaDeJuegos[], int tamanioJuegos)
 	{
     	system("cls");
 	    printf(" ****  LISTADO DE JUEGOS  ****\n");
-	    printf("Id        Descripcion\n");
-    	printf("----------------------------------\n");
+	    printf("Id              Descripcion\n");
+        printf("--------------------------------\n");
 
         for(int i = 0 ; i<tamanioJuegos; i++)
 	    {

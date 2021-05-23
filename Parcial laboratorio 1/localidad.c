@@ -20,7 +20,7 @@ int hardCodearLocalidades(eLocalidad listaDeLocalidades[], int tamLocalidades)
 	};
 
 
-	for(int i = 0; i<tamLocalidades;i++)
+	for(int i = 0; i<8;i++)
 	{
 		strcpy(listaDeLocalidades[i].descripcion,Localidad[i]);
 		listaDeLocalidades[i].idLocalidad = idLocalidad[i];
@@ -33,7 +33,7 @@ int hardCodearLocalidades(eLocalidad listaDeLocalidades[], int tamLocalidades)
 
 void mostrarLocalidad(eLocalidad unLocalidad)
 {
-    printf(" %d         %10s \n",unLocalidad.idLocalidad,unLocalidad.descripcion);
+    printf(" %d         %20s \n",unLocalidad.idLocalidad,unLocalidad.descripcion);
 }
 
 int listarLocalidades(eLocalidad listaDeLocalidades[], int tamanioLocalidades)

@@ -13,7 +13,7 @@ int hardcodearAlquileres(eAlquileres listaDeAlquileres[],int tamanioAlquileres, 
 {
     int retorno = -1;
 
-    int codigoJuego[10] = {1007,1001,1002,1003,1004,1002,1007,1007,1001,1003};
+    int codigoJuego[10] = {1007,1003,1002,1002,1004,1002,1007,1007,1001,1003};
     int dias [10] = {4,4,8,8,30,30,11,22,22,4};
     int meses [10] = {12,12,1,1,4,4,5,6,6,4};
     int anios [10] = {1996,1996,2020,2020,2004,2004,2001,2004,2019,2020};
@@ -281,7 +281,7 @@ int listarAlquilers(eAlquileres listaDeAlquileres[],int tamAlquilers,eJuego list
     if( listaDeAlquileres != NULL && tamAlquilers > 0 )
     {
         system("cls");
-        //ordenarAlquileres(listaDeAlquileres,tamNotebook);
+
         printf(" Codigo Alquiler           Juego          Categoria      Codigo Cliente     Nombre Cliente      Apellido Cliente          Fecha de Alquiler          Precio       Localidad\n");
         printf("-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 
@@ -324,66 +324,80 @@ int verificarExistenciaAlquiler(eAlquileres listarAlquileres[], int tamAlquilere
     return error;
 }
 
-/*
+
 int mostrarClientesSinAlquileres(eCliente listaDeClientes [],eAlquileres listaDeALquileres [], int tamClientes, int tamAlquiler,eLocalidad listaDeLocalidades [], int tamLocalidades)
 {
     int retorno = -1;
-    int indice;
+    int indices [tamClientes];
+    int flag = 0;
 
     if(listaDeClientes != NULL && listaDeALquileres!= NULL && listaDeLocalidades != NULL  && tamClientes >0 && tamAlquiler >0 && tamLocalidades>0)
     {
+        printf("*** CLIENTES SIN ALQUILERES ***\n\n");
+        printf(" Codigo           Nombre             Apellido             Sexo           Telefono           Localidad\n");
+        printf("---------------------------------------------------------------------------------------------------------\n");
+        for(int i = 0; i<tamClientes; i++)
+        {
+            indices[i] = 0;
+            for(int j = 0; j<tamAlquiler; j++)
+            {
+                if(listaDeClientes[i].codigo == listaDeALquileres[j].codigoCliente && listaDeALquileres[i].isEmpty == 0)
+                {
+                    indices[i] = 1;
+
+                }
+            }
+        }
 
         for(int i = 0; i<tamClientes; i++)
         {
-            indice = buscarCliente(listaDeClientes,tamClientes,listaDeClientes[i].codigo);
 
-            if(indice != -1)
+            if(indices[i] == 0 && listaDeClientes[i].isEmpty == 0)
             {
-                if(listaDeALquileres[i].isEmpty == 0 && listaDeALquileres[i].codigoCliente == listaDeClientes[i].codigo)
-                {
-
-                }else
-                {
-                    mostrarUnCliente(listaDeClientes[i],listaDeLocalidades,tamLocalidades);
-                }
-
+                mostrarUnCliente(listaDeClientes[i],listaDeLocalidades,tamLocalidades);
+                flag = 1;
             }
         }
+        if(!flag)
+        {
+            printf("No hay clientes sin alquileres\n");
+        }
     }
-
-
     return retorno;
+
 }
-*/
+
 int mostrarJuegoSinAlquiler(eAlquileres listaDeAlquileres[],eJuego listaDeJuegos [], int tamAlquileres, int tamJuegos)
 {
     int retorno = -1;
-    int indice;
+    int indices[tamJuegos];
     int flag = 0;
 
     if(listaDeAlquileres != NULL && listaDeJuegos !=NULL && tamAlquileres >0 && tamJuegos >0)
     {
+        printf("*** JUEGOS SIN ALQUILER ***\n\n");
         retorno = 1;
-        for(int i = 0; i<tamAlquileres; i++)
+        printf("Id              Descripcion\n");
+        printf("--------------------------------\n");
+        for(int i = 0; i<tamJuegos; i++)
         {
-            indice = buscarJuego(listaDeJuegos,tamJuegos,listaDeJuegos[i].codigo);
-
-            if(indice != -1)
+            indices[i] = 0;
+            for(int j = 0; j <tamAlquileres; j++)
             {
 
-                if(listaDeAlquileres[i].isEmpty ==0 && listaDeAlquileres[i].codigoJuego == listaDeJuegos[indice].codigo)
+                if(listaDeAlquileres[i].isEmpty ==0 && listaDeAlquileres[j].codigoJuego == listaDeJuegos[i].codigo)
                 {
-
+                    indices[i] = 1;
                 }
-                else
-                {
-                    flag = 1;
-                    printf(" ****  LISTADO DE JUEGOS  ****\n");
-                    printf("Id        Descripcion\n");
-                    printf("----------------------------------\n");
+            }
+        }
 
-                    mostrarJuego(listaDeJuegos[indice]);
-                }
+        for(int i = 0; i<tamJuegos; i++)
+        {
+            if(indices[i] == 0)
+            {
+                mostrarJuego(listaDeJuegos[i]);
+                flag = 1;
             }
         }
 
@@ -437,8 +451,8 @@ int mostrarAcumuladoPorCliente(eAlquileres listaDeAlquileres[],eJuego listaDeJue
         else
         {
             indice = buscarCliente(listaDeClientes,tamClientes,idCliente);
-            printf(" Codigo           Nombre             Apellido             Sexo           Telefono       IdLocalidad      Localidad\n");
-            printf("---------------------------------------------------------------------------------------------------------------------\n");
+            printf(" Codigo           Nombre             Apellido             Sexo           Telefono           Localidad\n");
+            printf("---------------------------------------------------------------------------------------------------------\n");
             mostrarUnCliente(listaDeClientes[indice],listaDeLocalidads,tamEmpleados);
             printf("\nTotal acumulado %.2f\n",acumulador);
         }
@@ -519,9 +533,9 @@ int mostrarTelefonoOClientesPorFecha(eAlquileres listaDeAlquileres[],eJuego list
 
                 {
 
-                   indice = buscarCliente(listaClientes,tamCliente,listaDeAlquileres[i].codigoCliente);
-                   mostrarUnCliente(listaClientes[indice],listaDeLocalidades,tamLocalidades);
-                   flag=1;
+                    indice = buscarCliente(listaClientes,tamCliente,listaDeAlquileres[i].codigoCliente);
+                    mostrarUnCliente(listaClientes[indice],listaDeLocalidades,tamLocalidades);
+                    flag=1;
                 }
             }
 
@@ -543,3 +557,219 @@ int mostrarTelefonoOClientesPorFecha(eAlquileres listaDeAlquileres[],eJuego list
     return retorno;
 }
 
+int mostrarClientesPorJuego(eCliente listaDeClientes[],eJuego listaDeJuegos[],eLocalidad listaDeLocalidades[],eAlquileres listaDeAlquileres[], int tamAlquileres, int tamClientes,int tamJuegos,int tamLocalidades)
+{
+    int retorno =-1;
+    int idJuego;
+    int flag = 0;
+
+    if(listaDeClientes != NULL && listaDeJuegos != NULL && listaDeLocalidades !=NULL && tamClientes >0 && tamLocalidades >0 && tamJuegos>0)
+    {
+        printf("*** CLIENTES POR JUEGO\n\n");
+
+        listarJuegos(listaDeJuegos,tamJuegos);
+        if(utn_getNumero(&idJuego,"Ingrese el ID del juego del cual desea ver los clientes\n","Error, ID juego invalido\n",1000,1007,5))
+        {
+            printf(" Codigo           Nombre             Apellido             Sexo           Telefono           Localidad\n");
+            printf("---------------------------------------------------------------------------------------------------------\n");
+
+
+            for(int i = 0; i<tamAlquileres; i++)
+            {
+                if(idJuego == listaDeAlquileres[i].codigoJuego && listaDeAlquileres[i].isEmpty == 0)
+                {
+                    for(int j = 0; j<tamClientes; j++)
+                    {
+                        if(listaDeAlquileres[i].codigoCliente == listaDeClientes[j].codigo && listaDeClientes[j].isEmpty == 0)
+                        {
+                            mostrarUnCliente(listaDeClientes[j],listaDeLocalidades,tamLocalidades);
+                            flag =1;
+                        }
+                    }
+                }
+            }
+            if(!flag)
+            {
+                printf("Ese juego no ha sido alquilado\n");
+            }
+        }
+
+    }
+
+    return retorno;
+}
+
+int listarJuegosAlquiladosPorMujeres(eCliente listaClientes [], eLocalidad listaLocalidad[], eAlquileres listaAlquileres[], eJuego listaJuegos[], int tamAlqui,int tamCliente,int tamLocalidad, int tamJuegos)
+{
+    int retorno = -1;
+    int contadores[tamJuegos];
+    int flag = 0;
+
+    if(listaClientes != NULL && listaLocalidad != NULL && listaAlquileres != NULL && listaJuegos != NULL && tamAlqui >0 && tamCliente >0 && tamLocalidad >0 &&tamJuegos >0)
+    {
+        retorno =0;
+
+
+        printf(" ***  JUEGOS ALQUILADOS POR MUJERES *** \n\n");
+        printf("Id              Descripcion\n");
+        printf("--------------------------------\n");
+        for(int i = 0; i<tamJuegos; i++)
+        {
+            contadores[i] = 0;
+            for(int j =0; j<tamAlqui; j++)
+            {
+                if(listaJuegos[i].codigo == listaAlquileres[j].codigoJuego && listaAlquileres[j].isEmpty == 0)
+                {
+                    for(int k = 0; k<tamCliente; k++)
+                    {
+                        if(listaAlquileres[j].codigoCliente == listaClientes[k].codigo && listaClientes[k].sexo == 'f' && listaClientes[k].isEmpty == 0)
+                        {
+                            contadores[i] = 1;
+                            flag = 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        for(int i = 0; i<tamJuegos; i++)
+        {
+            if(contadores[i] == 1)
+            {
+                mostrarJuego(listaJuegos[i]);
+            }
+        }
+
+        if(!flag)
+        {
+            printf("No hay juegos alquilados por mujeres\n");
+        }
+    }
+
+
+    return retorno;
+}
+
+int juegoPreferidoDeHombres(eCliente listaDeClientes[],eLocalidad listaDeLocalidades [], eJuego ListaDeJuegos[],eAlquileres listaDeAlquileres[], int tamAlquileres,int tamClientes,int tamLocalidad,int tamJuegos)
+{
+    int retorno = -1;
+    int indices[tamClientes];
+    int mayor;
+    int flag = 0;
+
+    if(listaDeClientes != NULL && listaDeLocalidades != NULL && listaDeClientes != NULL && ListaDeJuegos != NULL && listaDeAlquileres != NULL && tamClientes >0 && tamAlquileres >0 && tamLocalidad >0 && tamJuegos >0)
+    {
+
+        printf("*** JUEGOS PREFERIDOS POR LOS HOMBRES *** \n\n");
+        retorno = 1;
+        printf("Id              Descripcion\n");
+        printf("--------------------------------\n");
+
+        for(int i = 0; i<tamJuegos; i++)
+        {
+            indices[i] = 0;
+
+            for(int j = 0; j<tamAlquileres; j++)
+            {
+                if(listaDeAlquileres[j].isEmpty == 0 && ListaDeJuegos[i].codigo == listaDeAlquileres[j].codigoJuego)
+                {
+                    for(int k = 0; k<tamClientes; k++)
+                    {
+                        if(listaDeAlquileres[j].codigoCliente == listaDeClientes[k].codigo && listaDeClientes[k].sexo == 'm')
+                        {
+                            indices[i]++;
+                            flag = 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        mayor = indices[0];
+
+        for(int i = 0; i<tamJuegos; i++)
+        {
+
+            if(indices[i] > mayor)
+            {
+                mayor = indices[i];
+            }
+        }
+
+        for(int i = 0; i<tamJuegos; i++)
+        {
+            if(indices[i] == mayor)
+            {
+                mostrarJuego(ListaDeJuegos[i]);
+            }
+        }
+
+        if(!flag)
+        {
+            printf("No hay juegos elegidos por hombres\n");
+        }
+
+    }
+
+
+
+    return retorno;
+
+}
+
+int mostrarAcumuladoPorFecha(eAlquileres listaDeAlquileres[],eJuego listaJuegos[],eCliente listaClientes[],eLocalidad listaDeLocalidades[],int tamLocalidades,int tamAlquileres,int tamJuego, int tamCliente)
+{
+    int retorno = -1;
+    eFecha fecha;
+    float acumulador = 0;
+    int flag = 0;
+    if(listaDeAlquileres != NULL && listaClientes != NULL && listaJuegos != NULL && listaDeLocalidades != NULL && tamCliente >0 && tamLocalidades>0 && tamAlquileres >0 && tamJuego>0)
+    {
+
+        system("cls");
+        printf(" *** ACUMULADO DE DINERO POR FECHA ***\n\n");
+
+        if(utn_getNumero(&fecha.dia,"Ingrese el dia del alquiler\n","Error, ingrese un dai valido\n",1,31,4) &&
+                utn_getNumero(&fecha.mes,"Ingrese el mes del alquiler\n","Error, ingrese un mes valido\n",1,12,4) &&
+                utn_getNumero(&fecha.anio,"Ingrese el anio del alquiler\n","Error, ingrese un anio valido\n",1900,2021,4))
+        {
+
+            printf("\nFecha seleccionada: %02d/%02d/%4d\n",fecha.dia,fecha.mes,fecha.anio);
+
+
+            for(int i=0; i<tamAlquileres; i++)
+            {
+                for(int j = 0; j<tamJuego; j++)
+                {
+                    if(listaDeAlquileres[i].fechaAlquiler.dia==fecha.dia &&
+                            listaDeAlquileres[i].fechaAlquiler.mes==fecha.mes &&
+                            listaDeAlquileres[i].fechaAlquiler.anio==fecha.anio&&
+                            listaDeAlquileres[i].isEmpty == 0&&
+                            listaDeAlquileres[i].codigoJuego == listaJuegos[j].codigo)
+
+                    {
+
+                        acumulador = acumulador + listaJuegos[j].importe;
+                        flag = 1;
+
+                    }
+                }
+            }
+            printf("Acumulado %.4f\n",acumulador);
+
+            if(!flag)
+            {
+                printf("No hay trabajos cargados ese dia\n");
+            }
+        }
+        else
+        {
+            printf("Error, al ingresar la fecha\n");
+        }
+
+    }
+
+
+
+    return retorno;
+}

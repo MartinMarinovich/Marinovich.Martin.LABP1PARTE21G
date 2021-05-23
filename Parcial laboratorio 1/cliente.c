@@ -16,7 +16,7 @@ int hardcodearClientes(eCliente listaDeClientes[],int tamanioClientes, int *pIdC
 
     char nombres[10][51]= {"Donato","German","Gunda","Carmen","Daniela","Maria","Alex","Damian","Gaston","Santiago"};
     char apellidos[10][51]= {"Perez","Morales","Lopez","Huber","Fraiese","Parodi","Ferraro","Taboada","Zermo","Contardi"};
-    int idLocalidades[10] = {100,106,102,101,101,104,105,102,105,103};
+    int idLocalidades[10] = {100,106,106,101,105,104,105,102,105,103};
     char telefonos[10][21]= {"4204-6286","11-2650-6432","15-2435-8963","4265-9842","4895-6542","11-2256-6845","15-4789-7263","11-3548-4632","4289-4563","4222-4555"};
     char sexos[10]= {'m','m','f','f','f','f','m','m','m','m'};
 
@@ -161,7 +161,7 @@ int altaCliente(eCliente listaDeClientes[],eLocalidad listaDeLocalidades[],int t
 
 int menu (int *opcionMenu)
 {
-    int error = -1;
+    int error = 0;
     int opcion;
 
     if(opcionMenu != NULL)
@@ -182,15 +182,20 @@ int menu (int *opcionMenu)
         printf("11 Mostrar Juegos sin alquiler\n");
         printf("12 Mostrar clientes por fecha de alquiler\n");
         printf("13 Mostrar clientes por localidad\n");
-        printf("14 Contar clientes por localidad\n");
-        printf("15 Salir\n");
+        printf("14 Mostrar Localidad con mas clientes\n");
+        printf("15 Mostrar juegos elegidos por muejeres\n");
+        printf("16 Mostrar el o los juegos preferidos de hombres\n");
+        printf("17 Mostrar Clientes por juego\n");
+        printf("18 Mostrar acumulado por fecha de alquiler\n");
+        printf("19 Salir\n");
 
 
-        if(utn_getNumero(&opcion,"\nIngrese la opcion deseada\n","Error, opcion invalida\n",1,15,4))
+        if(utn_getNumero(&opcion,"\nIngrese la opcion deseada\n","Error, opcion invalida\n",1,19,4))
         {
             *opcionMenu = opcion;
+            error = 1;
         }
-        error = 0;
+
 
     }
     return error;
@@ -199,7 +204,7 @@ int menu (int *opcionMenu)
 int obtenerDescripcionLocalidad(eLocalidad listaDeLocalidades[],eCliente unCliente,int tamLocalidades, char descripcionLocalidad[])
 {
     int error = -1;
-    //int indice;
+
 
     if(listaDeLocalidades != NULL && tamLocalidades >0 && descripcionLocalidad != NULL)
     {
@@ -231,7 +236,7 @@ int listarClientes(eCliente listaDeClientes[],eLocalidad listaDeLocalidades [],i
     if( listaDeClientes != NULL && tamClientes > 0 )
     {
         system("cls");
-        //ordenarNotebooks(listaDeClientes,tamNotebook);
+
         printf(" Codigo           Nombre             Apellido             Sexo           Telefono           Localidad\n");
         printf("---------------------------------------------------------------------------------------------------------\n");
 
@@ -239,7 +244,7 @@ int listarClientes(eCliente listaDeClientes[],eLocalidad listaDeLocalidades [],i
         {
             if(!verificarExistenciaCliente(listaDeClientes,tamClientes)&& listaDeClientes[i].isEmpty == 0)
             {
-                //  mostrarUnCliente(listaDeClientes[i]);
+
                 mostrarUnCliente(listaDeClientes[i],listaDeLocalidades,tamLocalidades);
                 flag = 1;
                 error = 0;
@@ -302,7 +307,7 @@ int modificarClientes(eCliente listaDeClientes[], eLocalidad listaDeLocalidades 
     eCliente auxCliente;
 
 
-    if(listaDeClientes!=NULL && listaDeLocalidades != NULL && tamClientes>0 && tamLocalidades) // CAMBIAR
+    if(listaDeClientes!=NULL && listaDeLocalidades != NULL && tamClientes>0 && tamLocalidades)
     {
 
         listarClientes(listaDeClientes,listaDeLocalidades,tamClientes,tamLocalidades);
@@ -317,8 +322,9 @@ int modificarClientes(eCliente listaDeClientes[], eLocalidad listaDeLocalidades 
         else
         {
 
-            printf(" Codigo           Nombre             Apellido             Sexo           Telefono       IdLocalidad      Localidad\n");
-            printf("---------------------------------------------------------------------------------------------------------------------\n");
+            printf(" Codigo           Nombre             Apellido             Sexo           Telefono           Localidad\n");
+            printf("---------------------------------------------------------------------------------------------------------\n");
+
 
             mostrarUnCliente(listaDeClientes[indice],listaDeLocalidades,tamLocalidades);
 
@@ -391,10 +397,11 @@ int bajaCliente(eCliente listaDeClientes[], eLocalidad listaDeLocalidades [],int
     int idCliente;
 
     printf("*** Baja Cliente ***\n\n");
-    if(listaDeClientes!=NULL && tamClientes >0)
+
+    if(listaDeClientes!=NULL && tamClientes >0 && listaDeLocalidades != NULL && tamLocalidades >0)
     {
         listarClientes(listaDeClientes,listaDeLocalidades,tamClientes,tamLocalidades);
-        utn_getNumero(&idCliente,"\ningrese la ID","Error, numero invalido",1,20,4);
+        utn_getNumero(&idCliente,"Ingrese la ID\n","Error, numero invalido\n",1,20,4);
         indice = buscarCliente(listaDeClientes, tamClientes,idCliente);
         *pIdCliente = idCliente;
 
@@ -404,8 +411,9 @@ int bajaCliente(eCliente listaDeClientes[], eLocalidad listaDeLocalidades [],int
         }
         else
         {
-            printf(" Codigo           Nombre             Apellido             Sexo\n");
-            printf("-------------------------------------------------------------------------\n");
+            printf(" Codigo           Nombre             Apellido             Sexo           Telefono           Localidad\n");
+            printf("---------------------------------------------------------------------------------------------------------\n");
+
             mostrarUnCliente(listaDeClientes[indice],listaDeLocalidades,tamLocalidades);
 
             if(utn_getNumero(&opcion,"Desea dar de baja a este cliente?\n1-Si\2-No\n", "Error, numero incorrecto.\n",0,1,10))
@@ -470,21 +478,30 @@ int listarClientesPorLocalidad(eCliente listaDeClientes [],eLocalidad listaDeLoc
 {
     int retorno = -1;
     int idLocalidad;
+    int flag = 0;
     if(listaDeClientes!=NULL && listaDeLocalidades!=NULL && tamLocalidad >0 && tamClientes>0)
     {
         listarLocalidades(listaDeLocalidades,tamLocalidad);
 
         if(utn_getNumero(&idLocalidad,"Ingrese el id de la localidad\n","Error, id invalido\n",100,107,4))
         {
-            for(int i = 0; i<tamLocalidad;i++)
+            printf(" Codigo           Nombre             Apellido             Sexo           Telefono      Localidad\n");
+            printf("-----------------------------------------------------------------------------------------------------\n");
+            for(int i = 0; i<tamLocalidad; i++)
             {
                 if(listaDeClientes[i].idLocalidad == idLocalidad)
                 {
                     mostrarUnCliente(listaDeClientes[i],listaDeLocalidades,tamLocalidad);
+                    flag = 1;
                 }
             }
 
             retorno = 1;
+        }
+
+        if(!flag)
+        {
+            printf("No hay clientes con esa localidad\n");
         }
 
     }
@@ -492,6 +509,59 @@ int listarClientesPorLocalidad(eCliente listaDeClientes [],eLocalidad listaDeLoc
     return retorno;
 
 }
+
+int mostrarLocalidadConMasClientes(eCliente listaDeClientes [],eLocalidad listaDeLocalidades [],int tamLocalidad, int tamClientes)
+{
+    int retorno = -1;
+    int mayor;
+    int contadores[tamLocalidad];
+
+    if(listaDeClientes != NULL && listaDeLocalidades != NULL && tamLocalidad >0 && tamClientes >0)
+    {
+
+        printf("***LA O LAS LOCALIDADES CON MAS CLIENTES ***\n\n");
+
+        for(int i = 0; i<tamLocalidad; i++)
+        {
+            contadores[i] = 0;
+            for(int j = 0; j<tamClientes; j++)
+            {
+                if(listaDeLocalidades[i].idLocalidad == listaDeClientes[j].idLocalidad && listaDeClientes[i].isEmpty == 0)
+                {
+                    contadores[i]++;
+                    retorno = 1;
+
+                }
+            }
+        }
+
+        mayor = contadores[0];
+
+        for(int i = 0; i<tamLocalidad; i++)
+        {
+            if(contadores[i] > mayor)
+            {
+                mayor = contadores[i];
+            }
+        }
+
+
+        for(int i = 0; i<tamLocalidad; i++)
+        {
+            if(contadores[i] == mayor)
+            {
+                mostrarLocalidad(listaDeLocalidades[i]);
+
+            }
+        }
+
+    }
+
+
+    return retorno;
+}
+
+
 int getIdCliente(eCliente listaDeClientes[],eLocalidad listaDeLocalidades[],int tamClientes,int tamLocalidades)
 {
     int idCliente;

@@ -13,7 +13,7 @@ typedef struct{
 #endif // LOCALIDAD_H_INCLUDED
 int hardCodearLocalidades(eLocalidad listaDeLocalidades[], int tamLocal);
 
-void mostrarLocalidades(eLocalidad unaLocalidad);
+void mostrarLocalidad(eLocalidad unaLocalidad);
 
 int listarLocalidades(eLocalidad listaDeLocalidades[], int tamanioLocalidades);
 

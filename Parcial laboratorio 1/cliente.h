@@ -146,3 +146,7 @@ int getIdCliente(eCliente listaDeClientes[],eLocalidad listaDeLocalidades[],int 
 int obtenerDescripcionLocalidad(eLocalidad listaDeLocalidades[],eCliente unCliente,int tamLocalidades, char descripcionLocalidad[]);
 
 int listarClientesPorLocalidad(eCliente listaDeClientes [],eLocalidad listaDeLocalidades [],int tamLocalidad, int tamClientes);
+
+int mostrarLocalidadConMasClientes(eCliente listaDeClientes [],eLocalidad listaDeLocalidades [],int tamLocalidad, int tamClientes);
+
+

@@ -148,3 +148,6 @@ int obtenerDescripcionLocalidadAlquiler(eLocalidad listaDeLocalidades[],eCliente
 int mostrarClientesSinAlquileres(eCliente listaDeClientes [],eAlquileres listaDeALquileres [], int tamClientes, int tamAlquiler,eLocalidad listaDeLocalidades [], int tamLocalidades);
 int mostrarJuegoSinAlquiler(eAlquileres listaDeAlquileres[],eJuego listaDeJuegos [], int tamAlquileres, int tamJuegos);
 int juegoPreferidoDeHombres(eCliente listaDeClientes[],eLocalidad listaDeLocalidades [], eJuego ListaDeJuegos[],eAlquileres listaDeAlquileres[], int tamAlquileres,int tamClientes,int tamLocalidad,int tamJuegos);
+int listarJuegosAlquiladosPorMujeres(eCliente listaClientes [], eLocalidad listaLocalidad[], eAlquileres listaAlquileres[], eJuego listaJuegos[], int tamAlqui,int tamCliente,int tamLocalidad, int tamJuegos);
+int mostrarClientesPorJuego(eCliente listaDeClientes[],eJuego listaDeJuegos[],eLocalidad listaDeLocalidades[],eAlquileres listaDeAlquileres[], int tamAlquileres, int tamClientes,int tamJuegos,int tamLocalidades);
+int mostrarAcumuladoPorFecha(eAlquileres listaDeAlquileres[],eJuego listaJuegos[],eCliente listaClientes[],eLocalidad listaDeLocalidades[],int tamLocalidades,int tamAlquileres,int tamJuego, int tamCliente);

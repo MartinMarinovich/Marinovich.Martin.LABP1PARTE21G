@@ -145,7 +145,7 @@
 	<stdlib.h>
 	<string.h>
 
-1621645061 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\alquileres.c
+1621742064 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -155,7 +155,7 @@
 	"juego.h"
 	"utn.h"
 
-1621643795 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\alquileres.h
+1621738643 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\alquileres.h
 	"categoria.h"
 	"fecha.h"
 	"cliente.h"
@@ -165,10 +165,10 @@
 
 1621030127 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\fecha.h
 
-1621645084 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.h
+1621731849 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.h
 	"localidad.h"
 
-1621634993 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\localidad.h
+1621706190 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\localidad.h
 
 1621638773 c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\juego.h
 
@@ -182,7 +182,7 @@
 
 1621030029 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\fecha.c
 
-1621638820 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\juego.c
+1621742278 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\juego.c
 	"juego.h"
 	<stdio.h>
 	<stdlib.h>
@@ -194,7 +194,7 @@
 	<string.h>
 	"utn.h"
 
-1621645061 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\main.c
+1621742221 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"alquileres.h"
@@ -204,13 +204,13 @@
 	"categoria.h"
 	"localidad.h"
 
-1621636605 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\localidad.c
+1621706409 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\localidad.c
 	"localidad.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1621645095 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.c
+1621738707 source:c:\users\martin\desktop\marinovich.martin.labp1parte21g\parcial laboratorio 1\cliente.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
